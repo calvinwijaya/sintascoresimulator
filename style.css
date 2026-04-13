@@ -1,0 +1,81 @@
+body {
+    /* background-color: #f8f9fa; (Dihapus karena sekarang kita pakai gambar) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- BACKGROUND IMAGE & OVERLAY --- */
+.bg-image {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Pastikan path ini sesuai dengan lokasi file geodesi.jpg Anda */
+    background-image: url('geodesi.jpg'); 
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.bg-image::after {
+    content: ""; 
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    /* Overlay putih transparan, angka 0.85 bisa diubah (0.0 sangat jelas, 1.0 putih solid) */
+    background: rgba(255, 255, 255, 0.9); 
+}
+
+/* --- CARD STYLING --- */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08); /* Shadow sedikit dipertajam agar kontras dengan background */
+    background-color: rgba(255, 255, 255, 0.95); /* Efek semi-transparan putih (glassmorphism tipis) */
+}
+
+.card-heading {
+    color: #0d6efd; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.25rem; 
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+.header-title {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* --- LAIN-LAIN --- */
+.btn-add-row {
+    border-style: dashed;
+    border-width: 2px;
+}
+
+.result-box {
+    display: none;
+    background-color: #e9ecef;
+    border-left: 5px solid #0d6efd;
+}
+
+#chartContainer {
+    position: relative;
+    height: 40vh;
+    width: 100%;
+}
+
+.table-reference th {
+    background-color: #f1f5f9;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.scrollable-table {
+    max-height: 400px;
+    overflow-y: auto;
+}
